@@ -1,0 +1,40 @@
+
+
+<head>
+    <style>
+        form {
+            padding: 20px;
+            width: 50%
+        }
+    </style>
+</head>
+<p>Update STUDENT MARKS</p>
+<div class="d-flex justify-content-end">
+    <!-- Logout button -->
+    <button class="btn btn-danger" (click)="logout()">Logout</button>
+</div>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success</strong> Data Updated Successfully
+    <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<form [formGroup]="editMarks" (ngSubmit)="collection()">
+    <div class="mb-3">
+        <label>Roll Number</label>
+        <input type="text" class="form-control" placeholder="enter Roll Number" formControlName="rollnumber">
+    </div>
+    <div class="mb-3">
+        <label>name</label>
+        <input type="text" class="form-control" placeholder="enter name" formControlName="name">
+    </div>
+    <div class="mb-3">
+        <label>Date-Of-Birth</label>
+        <input type="text" class="form-control" placeholder="enter Date-Of-Birth" formControlName="date">
+    </div>
+    <div class="mb-3">
+        <label>Marks</label>
+        <input type="number" class="form-control" placeholder="enter Marks" formControlName="marks">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

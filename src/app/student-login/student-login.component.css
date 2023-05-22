@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    overflow: hidden; 
+  }
+  
+  .student-login-form {
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow-y: scroll; /* Enable scrolling within the form */
+  scrollbar-width: thin; /* Firefox */
+  }
+  
+  .student-login-form h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .table-responsive {
+    margin-top: 20px;
+  }
+  .student-login-form::-webkit-scrollbar {
+    width: 6px; /* Adjust the width of the scrollbar */
+  }
+  .student-login-form::-webkit-scrollbar-thumb {
+    background-color: #888; /* Adjust the color of the scrollbar thumb */
+    border-radius: 3px; /* Adjust the border-radius of the scrollbar thumb */
+  }
+  

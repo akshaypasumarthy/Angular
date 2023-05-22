@@ -1,0 +1,35 @@
+<head>
+    <style>
+        form {
+            padding: 20px;
+            width: 50%
+        }
+    </style>
+</head>
+
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success</strong> Registered Successfully
+    <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<form (ngSubmit)="login()" #loginForm="ngForm">
+
+    <div class="container"> 
+        <div class="student-login-form">
+            <h2>Teacher Login</h2>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="enter name" formControlName="name"
+                    [(ngModel)]="name" required>
+            </div>
+            <div class="form-group">
+                <label>Enter Password</label>
+                <input type="password" class="form-control" placeholder="enter Password" formControlName="password"
+                    [(ngModel)]="password" required>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.form.valid">submit</button>
+        </div>
+    </div>
+
+</form>

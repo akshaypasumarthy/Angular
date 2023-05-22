@@ -1,0 +1,41 @@
+<h2>Marks-List-Teacher-View </h2>
+<div class="d-flex justify-content-end">
+  <!-- Logout button -->
+  <button class="btn btn-danger" (click)="logout()">Logout</button>
+</div>
+<!-- list-marks.component.html -->
+<div class="d-flex justify-content-end">
+  <!-- Empty div for creating the gap -->
+  <div style="width: 10px"></div>
+
+    <a class="btn btn-primary ml-auto" routerLink="/add" id="add">Add marks</a>
+  </div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Roll Number</th>
+      <th scope="col">Name</th>
+      <th scope="col">date-of-birth</th>
+      <th scope="col">Marks</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of collection">
+      <td>{{item.id}}</td>
+      <td>{{ item.rollnumber }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{item.date}}</td>
+      <td>{{ item.marks }}</td>
+      <td>
+        <i (click)="deleteField(item.id)" class="fa fa-trash" style="font-size:30px;color:red;"></i>
+        <a routerLink="/update/{{item.id}}">
+          <i class="fa fa-pencil-alt" style="font-size:30px;color:black;"></i>
+        </a>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
